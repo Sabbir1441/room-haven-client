@@ -38,12 +38,24 @@ const Navbar = () => {
                     : "hover:text-[#C18440]"
                 }
               >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/rooms"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#717413] font-semibold"
+                    : "hover:text-[#C18440]"
+                }
+              >
                 Rooms
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/all-visas"
+                to="/my-bookings"
                 className={({ isActive }) =>
                   isActive
                     ? "text-[#717413] font-semibold"
@@ -74,12 +86,24 @@ const Navbar = () => {
                   : "hover:text-white hover:bg-[#0A92B9]"
               }
             >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/rooms"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#eeeeec] bg-[#468596] border-b-2 border-[#f1972f] pb-1 font-semibold"
+                  : "hover:text-white hover:bg-[#0A92B9]"
+              }
+            >
               Rooms
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/all-visas"
+              to="/my-bookings"
               className={({ isActive }) =>
                 isActive
                   ? "text-[#eeeeec] bg-[#468596] border-b-2 border-[#f1972f] pb-1 font-semibold"
