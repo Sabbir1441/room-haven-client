@@ -5,7 +5,7 @@ const Navbar = () => {
 
 
   return (
-    <div className=" navbar bg-gradient-to-r from-[#202221] via-[#0b2c16] to-[#094830] text-white shadow-md sticky top-0 z-50">
+    <div className=" navbar bg-gray-800 text-white shadow-md sticky top-0 z-50">
       <div className="navbar-start">
         {/* Dropdown for smaller screens */}
         <div className="dropdown">
