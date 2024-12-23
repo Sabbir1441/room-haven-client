@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AuthContext from "../../provider/AuthContext";
 
 
 const Register = () => {
+
+    const { createNewUser } = useContext(AuthContext);
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -33,6 +38,16 @@ const Register = () => {
         }
 
         console.log("All validations passed:", name, email, password, photo);
+
+        createNewUser(email, password)
+            .then((result) => {
+                console.log(result.user)
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+
     };
 
     return (
