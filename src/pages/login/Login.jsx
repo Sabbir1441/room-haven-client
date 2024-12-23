@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import AuthContext from "../../provider/AuthContext";
 
 const Login = () => {
+
+
+    const { userLogin } = useContext(AuthContext);
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        userLogin(email, password)
+            .then((result) => {
+               console.log(result.user)
+            })
+            .catch((error) => {
+                alert(error.code);
+            });
+    };
+
+
     return (
         <div className="min-h-screen bg-gray-100 flex items-center justify-center">
             <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8">
@@ -9,7 +31,7 @@ const Login = () => {
                 <h2 className="text-2xl font-bold text-center text-gray-800">Login</h2>
 
                 {/* Login Form */}
-                <form className="mt-6 space-y-4">
+                <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                     {/* Email Field */}
                     <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -18,6 +40,7 @@ const Login = () => {
                         <input
                             type="email"
                             id="email"
+                            name="email"
                             className="input input-bordered w-full mt-1"
                             placeholder="Enter your email"
                             required
@@ -32,10 +55,17 @@ const Login = () => {
                         <input
                             type="password"
                             id="password"
+                            name="password"
                             className="input input-bordered w-full mt-1"
                             placeholder="Enter your password"
                             required
                         />
+                    </div>
+                    {/* Forgot Password Link */}
+                    <div className="text-right">
+                        <Link to="/auth/forgot-password" className="text-sm text-[#0A92B9] hover:text-[#183C30]">
+                            Forgot Password?
+                        </Link>
                     </div>
 
                     {/* Submit Button */}
@@ -71,7 +101,7 @@ const Login = () => {
                                 d="M24 47c6.5 0 11.9-2.1 15.8-5.7l-7.4-5.7c-2.1 1.4-4.8 2.3-8.4 2.3-6.2 0-11.4-3.6-13.9-8.8l-7.4 5.7c3.4 7.8 11.2 13.4 21.2 13.4z"
                             />
                         </svg>
-                        Sign Up with Google
+                        Login with Google
                     </button>
                 </div>
 
