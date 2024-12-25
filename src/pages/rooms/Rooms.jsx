@@ -8,7 +8,6 @@ const Rooms = () => {
         fetch('http://localhost:5000/rooms')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setRooms(data); 
             })
             .catch(error => console.error('Error fetching rooms:', error));
