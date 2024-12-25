@@ -93,7 +93,7 @@ const MyBookings = () => {
                             <p className="text-gray-500">{new Date(booking.bookingDate).toLocaleDateString()}</p>
                             <div className="mt-4">
                                 <button
-                                    className="bg-red-600 text-white px-4 py-2 rounded-lg mr-2"
+                                    className="bg-red-600 text-white px-4 py-2 rounded-lg m-2"
                                     onClick={() => {
                                         setSelectedBooking(booking);
                                         setShowCancelModal(true);
@@ -102,13 +102,13 @@ const MyBookings = () => {
                                     Cancel
                                 </button>
                                 <button
-                                    className="bg-blue-600 text-white px-4 py-2 rounded-lg mr-2"
+                                    className="bg-blue-600 text-white px-4 py-2 rounded-lg m-2"
                                     onClick={() => handleReview(booking._id)}
                                 >
                                     Review
                                 </button>
                                 <button
-                                    className="bg-green-600 text-white px-4 py-2 rounded-lg"
+                                    className="bg-green-600 text-white px-4 py-2 rounded-lg m-2"
                                     onClick={() => {
                                         setSelectedBooking(booking);
                                         setShowDateModal(true);
