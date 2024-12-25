@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import AuthContext from "../provider/AuthContext";
+import userlogo from "../assets/free-user-icon-3296-thumb.png";
 
 
 const Navbar = () => {
+
+  const { user, logOut } = useContext(AuthContext);
 
 
   return (
@@ -65,7 +70,7 @@ const Navbar = () => {
                 My Bookings
               </NavLink>
             </li>
-            
+
           </ul>
         </div>
         {/* Website Name/Logo */}
@@ -113,23 +118,28 @@ const Navbar = () => {
               My Bookings
             </NavLink>
           </li>
-          
+
         </ul>
       </div>
 
 
 
       <div className="navbar-end">
-          <div className="space-x-3">
-            <Link
-              to="/auth/login"
-              className="btn btn-sm bg-[#0A92B9] hover:bg-[#3866c9] border-none text-white"
-            >
-              Login
-            </Link>
-            
-          </div>
-        
+        <div className="flex gap-4 items-center">
+
+          {
+            user && user?.email ? (
+              <img className="w-[50px] h-[50px] rounded-full" src={user?.photoURL} alt="" />
+            ) : (<img className="w-[50px]" src={userlogo} alt="" />)
+          }
+
+          {
+            user && user?.email ? (<button onClick={logOut} className="btn btn-sm bg-[#0A92B9] hover:bg-[#3866c9] border-none text-white">Log out</button>
+            ) : (<Link to="/auth/login"><button className="btn btn-sm bg-[#0A92B9] hover:bg-[#3866c9] border-none text-white">log in</button></Link>)
+          }
+
+        </div>
+
       </div>
     </div>
   );

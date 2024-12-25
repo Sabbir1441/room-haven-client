@@ -1,18 +1,23 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AuthContext from "../../provider/AuthContext";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import auth from "../../firebase/firebase.config";
 
 
 const Register = () => {
 
-    const { createNewUser } = useContext(AuthContext);
+    const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const [error, setError] = useState("");
 
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setError("");
         const form = new FormData(e.target);
         const name = form.get('name');
         const email = form.get('email');
@@ -35,19 +40,38 @@ const Register = () => {
         if (!isValidLength) {
             toast.error("Password must be at least 6 characters long.");
             return;
-        }
+        };
 
         console.log("All validations passed:", name, email, password, photo);
 
         createNewUser(email, password)
             .then((result) => {
-                console.log(result.user)
+                const user = result.user;
+                setUser(user);
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        navigate('/');
+                    })
+                    .catch((err) => {
+                    });
+
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
             });
+    };
 
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, provider)
+            .then(result => {
+                navigate("/");
+            })
+            .catch(error => {
+
+            })
     };
 
     return (
@@ -130,7 +154,7 @@ const Register = () => {
                 <ToastContainer />
                 {/* Google Login */}
                 <div className="mt-4 text-center">
-                    <button className="btn btn-outline w-full">
+                    <button onClick={handleGoogleSignIn} className="btn btn-outline w-full">
                         <svg
                             className="w-5 h-5 mr-2"
                             xmlns="http://www.w3.org/2000/svg"

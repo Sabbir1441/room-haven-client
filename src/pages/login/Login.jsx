@@ -1,11 +1,15 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../../provider/AuthContext";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import auth from "../../firebase/firebase.config";
 
 const Login = () => {
 
 
-    const { userLogin } = useContext(AuthContext);
+    const { userLogin, setUser } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
 
     const handleSubmit = (e) => {
@@ -16,11 +20,27 @@ const Login = () => {
 
         userLogin(email, password)
             .then((result) => {
-               console.log(result.user)
+                const user = result.user;
+                setUser(user);
+                navigate(location?.state ? location.state : '/');
             })
             .catch((error) => {
                 alert(error.code);
             });
+    };
+
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, provider)
+            .then(result => {
+                const user = result.user;
+                setUser(user);
+                navigate(location?.state ? location.state : "/");
+            })
+            .catch(error => {
+
+            })
     };
 
 
@@ -78,7 +98,7 @@ const Login = () => {
 
                 {/* Google Login */}
                 <div className="mt-4 text-center">
-                    <button className="btn btn-outline w-full">
+                    <button onClick={handleGoogleSignIn} className="btn btn-outline w-full">
                         <svg
                             className="w-5 h-5 mr-2"
                             xmlns="http://www.w3.org/2000/svg"
