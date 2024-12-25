@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import RoomCard from './RoomCard'; // RoomCard কম্পোনেন্ট ইম্পোর্ট
+import RoomCard from './RoomCard'; 
 
 const Rooms = () => {
     const [rooms, setRooms] = useState([]);
@@ -8,7 +8,8 @@ const Rooms = () => {
         fetch('http://localhost:5000/rooms')
             .then(res => res.json())
             .then(data => {
-                setRooms(data); // ডেটা সেট করা
+                console.log(data)
+                setRooms(data); 
             })
             .catch(error => console.error('Error fetching rooms:', error));
     }, []);

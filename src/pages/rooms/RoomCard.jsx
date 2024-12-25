@@ -1,10 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const RoomCard = ({ room }) => {
     const { name, type, price, location, image, rating, reviews, facilities } = room;
+    const navigate = useNavigate();
+
+    const handleNavigate = () => {
+        navigate(`/rooms/${room._id}`);
+    };
+
 
     return (
-        <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden mb-6">
+        <div  onClick={handleNavigate} className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden mb-6">
             {/* Image Section */}
             <div className="w-full md:w-1/3">
                 <img

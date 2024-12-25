@@ -7,6 +7,7 @@ import Auth from "../pages/auth/Auth";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import NotFound from "../pages/notFound/NotFound";
+import RoomDetails from "../pages/roomDetails/RoomDetails";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
             {
                 path: '/rooms',
                 element: <Rooms></Rooms>,
+            },
+            {
+                path: '/rooms/:id',
+                element: <RoomDetails></RoomDetails>
             },
             {
                 path: '/my-bookings',
