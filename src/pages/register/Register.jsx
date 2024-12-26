@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import AuthContext from "../../provider/AuthContext";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -76,6 +77,9 @@ const Register = () => {
 
     return (
         <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+            <Helmet>
+                <title>Register</title>
+            </Helmet>
             <div className="w-full max-w-lg bg-white rounded-lg shadow-md p-8">
                 {/* Title */}
                 <h2 className="text-3xl font-bold text-center text-gray-800">

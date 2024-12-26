@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../../provider/AuthContext";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
 
@@ -46,6 +47,9 @@ const Login = () => {
 
     return (
         <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+            <Helmet>
+                <title>login</title>
+            </Helmet>
             <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8">
                 {/* Login Title */}
                 <h2 className="text-2xl font-bold text-center text-gray-800">Login</h2>

@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import notFound from '../../assets/not-found.gif'
+import { Helmet } from "react-helmet-async";
 
 const NotFound = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+        <Helmet>
+            <title>Not Found</title>
+        </Helmet>
       {/* Image/GIF */}
       <img
         src={notFound}

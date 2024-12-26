@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import RoomCard from './RoomCard';
+import { Helmet } from 'react-helmet-async';
 
 const Rooms = () => {
     const [rooms, setRooms] = useState([]);
@@ -30,6 +31,9 @@ const Rooms = () => {
     }, [minPrice, maxPrice]); // ফিল্টার চেঞ্জ হলে কল হবে
     return (
         <div className="container mx-auto px-4">
+            *<Helmet>
+                <title>Rooms</title>
+            </Helmet>
             <h2 className="text-2xl font-bold text-center my-6">Available Rooms</h2>
             {/* Filter Section */}
             <div className="flex justify-between items-center mb-6">

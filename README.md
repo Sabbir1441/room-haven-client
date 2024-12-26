@@ -1,8 +1,16 @@
-# React + Vite
+# Room Haven
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive hotel booking website offering seamless room reservations and user-friendly features.
 
-Currently, two official plugins are available:
+## Features
+- Browse and book hotel rooms effortlessly.
+- View room details, reviews, and ratings.
+- Submit reviews for booked rooms.
+- Responsive design for all devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- React.js
+- Firebase Authentication
+- MongoDB
+- Node.js
+- Tailwind CSS

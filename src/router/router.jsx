@@ -9,6 +9,8 @@ import Register from "../pages/register/Register";
 import NotFound from "../pages/notFound/NotFound";
 import RoomDetails from "../pages/roomDetails/RoomDetails";
 import PrivateRoutes from "./PrivateRouters";
+import AboutUs from "../pages/about/AboutUs";
+import ConnectUs from "../pages/ConnectUs/ConnectUs";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
             {
                 path: '/my-bookings',
                 element: <PrivateRoutes><MyBookings></MyBookings></PrivateRoutes>
+            },
+            {
+                path: '/about',
+                element: <AboutUs></AboutUs>
+            },
+            {
+                path: '/connect',
+                element: <ConnectUs></ConnectUs>
             },
             {
                 path: '/auth',

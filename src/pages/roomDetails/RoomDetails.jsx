@@ -5,6 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { toast, ToastContainer } from 'react-toastify';
 import AuthContext from '../../provider/AuthContext';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet-async';
 
 const RoomDetails = () => {
     const { user } = useContext(AuthContext);
@@ -70,6 +71,9 @@ const RoomDetails = () => {
 
     return (
         <div className="container mx-auto px-4 my-10">
+            <Helmet>
+                <title>Room Details</title>
+            </Helmet>
             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                 {/* Room Image Section */}
                 <div className="relative h-96">

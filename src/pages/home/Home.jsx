@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import RoomCard from "./RoomCard";
 import Location from "./Location";
 import SpecialOffersModal from "./SpecialOffersModal";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
     const [rooms, setRooms] = useState([]);
@@ -22,7 +23,6 @@ const Home = () => {
 
     return (
         <div>
-
              {/* Modal for special offers */}
              <SpecialOffersModal />
             <Banner /> {/* Banner component */}
@@ -123,6 +123,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            
         </div>
     );
 };
