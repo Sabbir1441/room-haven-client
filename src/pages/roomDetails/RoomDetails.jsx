@@ -14,21 +14,18 @@ const RoomDetails = () => {
     const [selectedDate, setSelectedDate] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [bookingData, setBookingData] = useState(null);
-    const [userEmail, setUserEmail] = useState(""); // User's email (can be from authentication)
+    const [userEmail, setUserEmail] = useState("");
 
     useEffect(() => {
-        // Fetch room details from the server
         fetch(`http://localhost:5000/rooms/${id}`)
             .then((res) => res.json())
             .then((data) => setRoom(data))
             .catch((error) => console.error('Error loading room details:', error));
 
-        // Here you would set the logged-in user email from authentication context or state
-        setUserEmail("user@example.com"); // Example email, replace with actual authenticated email
+        setUserEmail(user?.email); 
     }, [id]);
 
     const handleBooking = () => {
-        // Ensure the room is available before allowing booking
         if (room.availability) {
             const bookingInfo = {
                 roomId: room._id,
@@ -36,10 +33,9 @@ const RoomDetails = () => {
                 roomName: room.name,
                 price: room.price,
                 bookingDate: selectedDate,
-                email: user?.email, // Send logged-in user's email
+                email: user?.email, 
             };
 
-            // Send booking data to the server
             fetch('http://localhost:5000/book-room', {
                 method: 'POST',
                 headers: {
@@ -50,11 +46,9 @@ const RoomDetails = () => {
                 .then((res) => res.json())
                 .then((data) => {
                     console.log(data);
-                    // Show confirmation toast
                     toast.success('Room booked successfully!');
-                    // Update room availability to false after booking
                     setRoom((prevRoom) => ({ ...prevRoom, availability: false }));
-                    setShowModal(false); // Close modal
+                    setShowModal(false); 
                 })
                 .catch((error) => {
                     console.error('Error booking room:', error);
@@ -157,7 +151,7 @@ const RoomDetails = () => {
                                 onChange={(date) => setSelectedDate(date)}
                                 dateFormat="MMMM d, yyyy"
                                 className="border border-gray-300 rounded-lg p-3 w-full"
-                                minDate={new Date()} // Disable past dates
+                                minDate={new Date()}
                                 placeholderText="Select a date"
                             />
                         </div>

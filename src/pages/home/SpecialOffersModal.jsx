@@ -6,10 +6,10 @@ import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
 const SpecialOffersModal = () => {
-    const [isOpen, setIsOpen] = useState(true); // Modal will be open on initial render
+    const [isOpen, setIsOpen] = useState(true);
 
     const closeModal = () => {
-        setIsOpen(false); // Close the modal
+        setIsOpen(false);
     };
 
     return (

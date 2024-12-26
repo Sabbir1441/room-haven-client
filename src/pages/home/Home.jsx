@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Banner from "../../components/Banner"; // Import Banner
+import Banner from "../../components/Banner"; 
 import room1 from '../../assets/room1.jpg';
 import room2 from '../../assets/room2.jpg';
 import room3 from '../../assets/room3.jpg';
@@ -7,16 +7,15 @@ import { Link } from "react-router-dom";
 import RoomCard from "./RoomCard";
 import Location from "./Location";
 import SpecialOffersModal from "./SpecialOffersModal";
-import { Helmet } from "react-helmet-async";
 
 const Home = () => {
     const [rooms, setRooms] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/rooms/latest") // Fetch only latest 6 rooms
+        fetch("http://localhost:5000/rooms/latest") 
             .then((res) => res.json())
             .then((data) => {
-                setRooms(data); // Set last 6 rooms from server
+                setRooms(data);
             })
             .catch((error) => console.error("Error fetching rooms:", error));
     }, []);
@@ -25,7 +24,7 @@ const Home = () => {
         <div>
              {/* Modal for special offers */}
              <SpecialOffersModal />
-            <Banner /> {/* Banner component */}
+            <Banner /> 
 
             {/* Latest Rooms Section */}
             <div className="container mx-auto px-4 mt-8">
@@ -40,7 +39,7 @@ const Home = () => {
             {/* Location Section */}
             <div>
                 <h2 className="text-3xl font-bold text-center my-6 text-gray-800">Our Location</h2>
-                <Location /> {/* Display the map here */}
+                <Location /> 
             </div>
 
             {/* Special Offers Section */}

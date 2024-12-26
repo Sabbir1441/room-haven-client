@@ -7,28 +7,25 @@ const Rooms = () => {
     const [minPrice, setMinPrice] = useState('');
     const [maxPrice, setMaxPrice] = useState('');
 
-    // Fetch রুম ডেটা
     const fetchRooms = async () => {
-        let url = 'http://localhost:5000/rooms'; // API URL
+        let url = 'http://localhost:5000/rooms'; 
 
-        // ফিল্টার যোগ করা হচ্ছে যদি মিন বা ম্যাক্স প্রাইস দেওয়া থাকে
         if (minPrice || maxPrice) {
             url += `?minPrice=${minPrice}&maxPrice=${maxPrice}`;
         }
 
         try {
-            const response = await fetch(url); // Fetch API ব্যবহার করা হচ্ছে
-            const data = await response.json(); // JSON ডেটা পাচ্ছি
-            setRooms(data); // রুমগুলো স্টেটে সেট করা হচ্ছে
+            const response = await fetch(url); 
+            const data = await response.json(); 
+            setRooms(data); 
         } catch (error) {
-            console.error('Error fetching rooms:', error); // যদি কোনো সমস্যা হয়
+            console.error('Error fetching rooms:', error); 
         }
     };
 
-    // যখনই মিন প্রাইস বা ম্যাক্স প্রাইস চেঞ্জ হবে, তখন রুম ফেচ করা হবে
     useEffect(() => {
-        fetchRooms(); // ফেচ রুম
-    }, [minPrice, maxPrice]); // ফিল্টার চেঞ্জ হলে কল হবে
+        fetchRooms(); 
+    }, [minPrice, maxPrice]); 
     return (
         <div className="container mx-auto px-4">
             *<Helmet>
@@ -44,7 +41,7 @@ const Rooms = () => {
                         type="number"
                         className="px-2 py-1 border"
                         value={minPrice}
-                        onChange={(e) => setMinPrice(e.target.value)} // মিন প্রাইস চেঞ্জ হলে
+                        onChange={(e) => setMinPrice(e.target.value)} 
                     />
                 </div>
                 <div>
@@ -54,11 +51,11 @@ const Rooms = () => {
                         type="number"
                         className="px-2 py-1 border"
                         value={maxPrice}
-                        onChange={(e) => setMaxPrice(e.target.value)} // ম্যাক্স প্রাইস চেঞ্জ হলে
+                        onChange={(e) => setMaxPrice(e.target.value)} 
                     />
                 </div>
                 <button
-                    onClick={fetchRooms} // ফিল্টার অ্যাপ্লাই করার সময় রুম ফেচ করা হবে
+                    onClick={fetchRooms}
                     className="px-4 py-2 bg-blue-600 text-white rounded"
                 >
                     Apply Filter

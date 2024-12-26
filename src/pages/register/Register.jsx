@@ -25,7 +25,6 @@ const Register = () => {
         const photo = form.get('photoURL');
         const password = form.get('password');
 
-        // password validation
         const hasUpperCase = /[A-Z]/.test(password);
         const hasLowerCase = /[a-z]/.test(password);
         const isValidLength = password.length >= 6;

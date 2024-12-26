@@ -4,8 +4,8 @@ import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 const Location = () => {
-  // কক্সবাজারের সমুদ্রের পাশে হোটেলের লোকেশন (latitude, longitude)
-  const Location = [21.414334, 91.983183]; // Example coordinates for Cox's Bazar
+  
+  const Location = [21.414334, 91.983183]; 
 
   return (
     <div className="w-full h-[400px]">

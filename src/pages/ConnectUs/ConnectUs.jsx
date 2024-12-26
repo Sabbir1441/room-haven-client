@@ -19,7 +19,6 @@ const ConnectUs = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Handle form submission logic here (e.g., send data to server)
   };
 
   return (

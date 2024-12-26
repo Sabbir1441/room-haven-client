@@ -4,7 +4,6 @@ import AuthContext from '../../provider/AuthContext';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-// Component for 'My Bookings' page
 const MyBookings = () => {
     const { user } = useContext(AuthContext);
     const [bookings, setBookings] = useState([]);
@@ -19,7 +18,6 @@ const MyBookings = () => {
     });
 
     useEffect(() => {
-        // Fetch user bookings by email (user email is passed for filtering)
         fetch(`http://localhost:5000/bookings/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setBookings(data))
@@ -60,7 +58,6 @@ const MyBookings = () => {
             .then((data) => {
                 toast.success('Booking date updated successfully!');
                 setShowDateModal(false);
-                // Update the bookings list
                 setBookings((prevBookings) =>
                     prevBookings.map((booking) =>
                         booking._id === bookingId
@@ -74,10 +71,9 @@ const MyBookings = () => {
             });
     };
 
-    // Handle review button click
     const handleReview = (bookingId) => {
         setSelectedBooking(bookingId);
-        setShowReviewModal(true); // Open review modal
+        setShowReviewModal(true); 
     };
 
     const handleReviewSubmit = () => {
@@ -97,7 +93,7 @@ const MyBookings = () => {
             .then((res) => res.json())
             .then((data) => {
                 toast.success('Review submitted successfully!');
-                setShowReviewModal(false); // Close the modal
+                setShowReviewModal(false); 
             })
             .catch((error) => {
                 toast.error('Error submitting review.');
@@ -115,7 +111,7 @@ const MyBookings = () => {
                     bookings.map((booking) => (
                         <div key={booking._id} className="border border-gray-300 rounded-lg shadow-lg p-4">
                             <img
-                                src={booking.image || 'default_image_url.jpg'} // Add a default image if `booking.image` is empty
+                                src={booking.image || 'default_image_url.jpg'} 
                                 alt={booking.roomName}
                                 className="w-full h-48 object-cover rounded-lg mb-4"
                             />
