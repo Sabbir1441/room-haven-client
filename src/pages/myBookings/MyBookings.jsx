@@ -12,6 +12,11 @@ const MyBookings = () => {
     const [selectedBooking, setSelectedBooking] = useState(null);
     const [selectedDate, setSelectedDate] = useState(null);
     const [showDateModal, setShowDateModal] = useState(false);
+    const [showReviewModal, setShowReviewModal] = useState(false);
+    const [review, setReview] = useState({
+        rating: 5,
+        comment: ''
+    });
 
     useEffect(() => {
         // Fetch user bookings by email (user email is passed for filtering)
@@ -69,10 +74,36 @@ const MyBookings = () => {
             });
     };
 
+    // Handle review button click
     const handleReview = (bookingId) => {
-        // Redirect or show review modal (this can be implemented later)
-        toast.info('Review button clicked. Implement your review functionality.');
+        setSelectedBooking(bookingId);
+        setShowReviewModal(true); // Open review modal
     };
+
+    const handleReviewSubmit = () => {
+        const reviewData = {
+            bookingId: selectedBooking,
+            rating: review.rating,
+            comment: review.comment,
+        };
+
+        fetch('http://localhost:5000/submit-review', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(reviewData),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                toast.success('Review submitted successfully!');
+                setShowReviewModal(false); // Close the modal
+            })
+            .catch((error) => {
+                toast.error('Error submitting review.');
+            });
+    };
+
 
     return (
         <div className="container mx-auto px-4 my-10">
@@ -121,6 +152,55 @@ const MyBookings = () => {
                     ))
                 )}
             </div>
+
+
+            {/* Review Modal */}
+            {showReviewModal && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                    <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+                        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Submit Your Review</h2>
+                        <div className="mb-4">
+                            <label className="block text-gray-600">Rating</label>
+                            <select
+                                className="border border-gray-300 rounded p-2 w-full"
+                                value={review.rating}
+                                onChange={(e) => setReview({ ...review, rating: e.target.value })}
+                            >
+                                <option value="5">5 - Excellent</option>
+                                <option value="4">4 - Good</option>
+                                <option value="3">3 - Average</option>
+                                <option value="2">2 - Poor</option>
+                                <option value="1">1 - Terrible</option>
+                            </select>
+                        </div>
+                        <div className="mb-4">
+                            <label className="block text-gray-600">Comment</label>
+                            <textarea
+                                className="border border-gray-300 rounded p-2 w-full"
+                                rows="4"
+                                value={review.comment}
+                                onChange={(e) => setReview({ ...review, comment: e.target.value })}
+                            ></textarea>
+                        </div>
+                        <div className="mt-6 flex justify-between">
+                            <button
+                                className="bg-gray-600 text-white px-4 py-2 rounded-full"
+                                onClick={() => setShowReviewModal(false)}
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                className="bg-blue-600 text-white px-4 py-2 rounded-full"
+                                onClick={handleReviewSubmit}
+                            >
+                                Submit Review
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+
 
             {/* Cancel Booking Modal */}
             {showCancelModal && (

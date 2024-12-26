@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../../components/Banner"; // Import Banner
+import room1 from '../../assets/room1.jpg';
+import room2 from '../../assets/room2.jpg';
+import room3 from '../../assets/room3.jpg';
+import { Link } from "react-router-dom";
 import RoomCard from "./RoomCard";
 import Location from "./Location";
-import room1 from '../../assets/room1.jpg'
-import room2 from '../../assets/room2.jpg'
-import room3 from '../../assets/room3.jpg'
-import { Link } from "react-router-dom";
-// Import RoomCard
 
 const Home = () => {
     const [rooms, setRooms] = useState([]);
@@ -23,6 +22,8 @@ const Home = () => {
     return (
         <div>
             <Banner /> {/* Banner component */}
+
+            {/* Latest Rooms Section */}
             <div className="container mx-auto px-4 mt-8">
                 <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Latest Rooms</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -32,11 +33,13 @@ const Home = () => {
                 </div>
             </div>
 
+            {/* Location Section */}
             <div>
                 <h2 className="text-3xl font-bold text-center my-6 text-gray-800">Our Location</h2>
                 <Location /> {/* Display the map here */}
             </div>
 
+            {/* Special Offers Section */}
             <section className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 py-16">
                 <div className="container mx-auto px-4 text-center text-white">
                     <h2 className="text-4xl font-bold mb-6">Exclusive Offers Just for You</h2>
@@ -81,9 +84,7 @@ const Home = () => {
                 </div>
             </section>
 
-
-
-
+            {/* Guest Reviews Section */}
             <section className="bg-gradient-to-r from-yellow-500 via-orange-600 to-red-500 py-16">
                 <div className="container mx-auto px-4 text-center text-white">
                     <h2 className="text-4xl font-bold mb-6">What Our Guests Say</h2>
@@ -101,7 +102,7 @@ const Home = () => {
                         </div>
                         <div className="bg-white rounded-lg shadow-xl p-6 transform hover:scale-105 transition duration-500">
                             <div className="flex justify-center mb-4">
-                                <img src="https://randomuser.me/api/portraits/men/14.jpg" alt="Guest 5" className="w-16 h-16 rounded-full" />
+                                <img src="https://randomuser.me/api/portraits/men/14.jpg" alt="Guest 2" className="w-16 h-16 rounded-full" />
                             </div>
                             <p className="text-lg text-gray-800 mb-4">"An incredible experience at Room Haven! The rooms were comfortable, the location was perfect, and the staff was super friendly. A wonderful stay overall!"</p>
                             <h3 className="font-semibold text-gray-700">James Wilson</h3>
@@ -118,9 +119,6 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-
-
-
         </div>
     );
 };
