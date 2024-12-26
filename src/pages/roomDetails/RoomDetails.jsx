@@ -31,6 +31,7 @@ const RoomDetails = () => {
         if (room.availability) {
             const bookingInfo = {
                 roomId: room._id,
+                image: room.image,
                 roomName: room.name,
                 price: room.price,
                 bookingDate: selectedDate,
