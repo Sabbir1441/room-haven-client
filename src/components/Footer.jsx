@@ -9,7 +9,7 @@ const Footer = () => {
                 <h3 className="text-xl font-bold">Room Haven</h3>
                 <p>
                     Your perfect stay, made simple. <br />
-                    Banani, Dhaka, Bangladesh
+                    Cox's Bazar, Bangladesh
                 </p>
                 <p>Email: info@roomhaven.com</p>
                 <p>Phone: +880 1789 922623</p>
