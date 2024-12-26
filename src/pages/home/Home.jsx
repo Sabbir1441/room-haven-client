@@ -6,6 +6,7 @@ import room3 from '../../assets/room3.jpg';
 import { Link } from "react-router-dom";
 import RoomCard from "./RoomCard";
 import Location from "./Location";
+import SpecialOffersModal from "./SpecialOffersModal";
 
 const Home = () => {
     const [rooms, setRooms] = useState([]);
@@ -21,6 +22,9 @@ const Home = () => {
 
     return (
         <div>
+
+             {/* Modal for special offers */}
+             <SpecialOffersModal />
             <Banner /> {/* Banner component */}
 
             {/* Latest Rooms Section */}
