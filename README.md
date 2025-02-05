@@ -33,10 +33,4 @@ The project relies on the following dependencies:
 - **react-toastify**: For displaying toast notifications.
 - **sort-by**: For sorting data.
 
-### 6. Running the Project Locally
 
-Follow these steps to run the project on your local machine:
-
-1. Clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/yourusername/room-haven.git
