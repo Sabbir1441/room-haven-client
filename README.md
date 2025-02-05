@@ -33,4 +33,38 @@ The project relies on the following dependencies:
 - **react-toastify**: For displaying toast notifications.
 - **sort-by**: For sorting data.
 
+## 🛠 How to Run the Project Locally
 
+Follow these steps to run the project on your local machine:
+
+### 1️⃣ Clone the Repository
+   ```bash
+   git clone https://github.com/yourusername/room-haven.git
+   cd room-haven
+```
+
+### 2️⃣ Install Dependencies
+```bash
+npm install
+```
+
+### 3️⃣ Set up Firebase
+- Create a Firebase project at Firebase Console.
+- Add Firebase config to your project (refer to the Firebase documentation for setup instructions).
+
+### 4️⃣ Start the Development Server
+```bash
+npm run dev
+```
+
+### 5️⃣ Open in Browser
+Visit `http://localhost:3000/` to see the project in action.
+
+## 📎 Additional Resources
+- [Project Live Link](https://nextgen-scholarships.web.app/)
+- [Firebase Documentation](https://firebase.google.com/docs)
+- [React Documentation](https://reactrouter.com/home)
+
+---
+
+💡 **Contributions are welcome!** Feel free to submit a pull request or suggest improvements. 😊
