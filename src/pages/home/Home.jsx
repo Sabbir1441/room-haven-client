@@ -21,13 +21,13 @@ const Home = () => {
     }, []);
 
     return (
-        <div>
+        <div className="bg-gray-100">
              {/* Modal for special offers */}
              <SpecialOffersModal />
             <Banner /> 
 
             {/* Latest Rooms Section */}
-            <div className="container mx-auto px-4 mt-8">
+            <div className="container  mx-auto px-4 mt-8">
                 <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Latest Rooms</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {rooms.map((room) => (
@@ -43,8 +43,8 @@ const Home = () => {
             </div>
 
             {/* Special Offers Section */}
-            <section className="">
-                <div className="container mx-auto px-4 mt-10 text-center text-gray-800">
+            <section className="bg-gray-100 py-10">
+                <div className="container mx-auto px-4 text-center">
                     <h2 className="text-4xl font-bold mb-4">Exclusive Offers Just for You</h2>
                     <p className="text-lg mb-12">
                         Take advantage of our exclusive offers and make your stay even more memorable!
@@ -88,9 +88,9 @@ const Home = () => {
             </section>
 
             {/* Guest Reviews Section */}
-            <section className="bg-gradient-to-r from-yellow-500 via-orange-600 to-red-500 py-16">
-                <div className="container mx-auto px-4 text-center text-white">
-                    <h2 className="text-4xl font-bold mb-6">What Our Guests Say</h2>
+            <section className="bg-gray-200 py-10">
+                <div className="container mx-auto px-4 text-center text-gray-800">
+                    <h2 className="text-4xl font-bold mb-4">What Our Guests Say</h2>
                     <p className="text-lg mb-12">
                         Hear directly from our guests about their unforgettable stay at Room Haven.
                     </p>
