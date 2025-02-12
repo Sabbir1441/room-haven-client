@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../provider/AuthContext";
 import userlogo from "../assets/free-user-icon-3296-thumb.png";
+import logo from "../assets/logo.png";
 
 
 const Navbar = () => {
@@ -58,24 +59,28 @@ const Navbar = () => {
                 Rooms
               </NavLink>
             </li>
-            <li>
+            {
+            user && ( <li>
               <NavLink
                 to="/my-bookings"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[#717413] font-semibold"
-                    : "hover:text-[#C18440]"
+                    ? "text-[#eeeeec] bg-[#468596] border-b-2 border-[#f1972f] pb-1 font-semibold"
+                    : "hover:text-white hover:bg-[#0A92B9]"
                 }
               >
                 My Bookings
               </NavLink>
-            </li>
+            </li>)
+          }
 
           </ul>
         </div>
         {/* Website Name/Logo */}
-        <Link to="/" className="text-2xl font-bold tracking-wide">
-          Room Haven
+        <Link to="/" className="">
+          {
+            <img className="w-[50px]" src={logo} alt="" />
+          }
         </Link>
       </div>
 
