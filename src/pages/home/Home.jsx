@@ -43,9 +43,9 @@ const Home = () => {
             </div>
 
             {/* Special Offers Section */}
-            <section className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 py-16">
-                <div className="container mx-auto px-4 text-center text-white">
-                    <h2 className="text-4xl font-bold mb-6">Exclusive Offers Just for You</h2>
+            <section className="">
+                <div className="container mx-auto px-4 mt-10 text-center text-gray-800">
+                    <h2 className="text-4xl font-bold mb-4">Exclusive Offers Just for You</h2>
                     <p className="text-lg mb-12">
                         Take advantage of our exclusive offers and make your stay even more memorable!
                     </p>
