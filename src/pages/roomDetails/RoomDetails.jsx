@@ -17,7 +17,7 @@ const RoomDetails = () => {
     const [userEmail, setUserEmail] = useState("");
 
     useEffect(() => {
-        fetch(`http://localhost:5000/rooms/${id}`)
+        fetch(`https://room-haven-server.vercel.app/rooms/${id}`)
             .then((res) => res.json())
             .then((data) => setRoom(data))
             .catch((error) => console.error('Error loading room details:', error));
@@ -36,7 +36,7 @@ const RoomDetails = () => {
                 email: user?.email, 
             };
 
-            fetch('http://localhost:5000/book-room', {
+            fetch('https://room-haven-server.vercel.app/book-room', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -45,7 +45,6 @@ const RoomDetails = () => {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log(data);
                     toast.success('Room booked successfully!');
                     setRoom((prevRoom) => ({ ...prevRoom, availability: false }));
                     setShowModal(false); 

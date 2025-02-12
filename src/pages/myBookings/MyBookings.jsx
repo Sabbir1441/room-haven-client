@@ -18,14 +18,14 @@ const MyBookings = () => {
     });
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bookings/${user?.email}`)
+        fetch(`https://room-haven-server.vercel.app/bookings/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setBookings(data))
-            .catch((err) => console.log('Error fetching bookings:', err));
+            .catch((err) => ('Error fetching bookings:', err));
     }, [user?.email]);
 
     const handleCancelBooking = (bookingId) => {
-        fetch(`http://localhost:5000/cancel-booking/${bookingId}`, {
+        fetch(`https://room-haven-server.vercel.app/cancel-booking/${bookingId}`, {
             method: 'DELETE',
         })
             .then((res) => res.json())
@@ -47,7 +47,7 @@ const MyBookings = () => {
             updatedDate: selectedDate,
         };
 
-        fetch('http://localhost:5000/update-booking', {
+        fetch('https://room-haven-server.vercel.app/update-booking', {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ const MyBookings = () => {
             comment: review.comment,
         };
 
-        fetch('http://localhost:5000/submit-review', {
+        fetch('https://room-haven-server.vercel.app/submit-review', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ const Rooms = () => {
     const [maxPrice, setMaxPrice] = useState('');
 
     const fetchRooms = async () => {
-        let url = 'http://localhost:5000/rooms'; 
+        let url = 'https://room-haven-server.vercel.app/rooms'; 
 
         if (minPrice || maxPrice) {
             url += `?minPrice=${minPrice}&maxPrice=${maxPrice}`;

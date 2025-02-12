@@ -42,7 +42,6 @@ const Register = () => {
             return;
         };
 
-        console.log("All validations passed:", name, email, password, photo);
 
         createNewUser(email, password)
             .then((result) => {

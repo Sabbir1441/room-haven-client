@@ -18,7 +18,6 @@ const ConnectUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
   };
 
   return (
