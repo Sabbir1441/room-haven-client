@@ -106,18 +106,20 @@ const Navbar = () => {
               Rooms
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/my-bookings"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#eeeeec] bg-[#468596] border-b-2 border-[#f1972f] pb-1 font-semibold"
-                  : "hover:text-white hover:bg-[#0A92B9]"
-              }
-            >
-              My Bookings
-            </NavLink>
-          </li>
+          {
+            user && ( <li>
+              <NavLink
+                to="/my-bookings"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#eeeeec] bg-[#468596] border-b-2 border-[#f1972f] pb-1 font-semibold"
+                    : "hover:text-white hover:bg-[#0A92B9]"
+                }
+              >
+                My Bookings
+              </NavLink>
+            </li>)
+          }
 
         </ul>
       </div>
