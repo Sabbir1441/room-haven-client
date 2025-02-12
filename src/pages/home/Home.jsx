@@ -36,14 +36,10 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* Location Section */}
-            <div>
-                <h2 className="text-3xl font-bold text-center my-6 text-gray-800">Our Location</h2>
-                <Location /> 
-            </div>
+            
 
             {/* Special Offers Section */}
-            <section className="bg-gray-100 py-10">
+            <section className="bg-gray-200 py-10">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-4xl font-bold mb-4">Exclusive Offers Just for You</h2>
                     <p className="text-lg mb-12">
@@ -88,7 +84,7 @@ const Home = () => {
             </section>
 
             {/* Guest Reviews Section */}
-            <section className="bg-gray-200 py-10">
+            <section className="bg-gray-100 py-10">
                 <div className="container mx-auto px-4 text-center text-gray-800">
                     <h2 className="text-4xl font-bold mb-4">What Our Guests Say</h2>
                     <p className="text-lg mb-12">
@@ -122,6 +118,12 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Location Section */}
+            <div>
+                <h2 className="text-3xl font-bold text-center my-6 text-gray-800">Our Location</h2>
+                <Location /> 
+            </div>
             
         </div>
     );
