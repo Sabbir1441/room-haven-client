@@ -11,6 +11,7 @@ import RoomDetails from "../pages/roomDetails/RoomDetails";
 import PrivateRoutes from "./PrivateRouters";
 import AboutUs from "../pages/about/AboutUs";
 import ConnectUs from "../pages/ConnectUs/ConnectUs";
+import Profile from "../pages/profile/Profile";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: '/connect',
                 element: <ConnectUs></ConnectUs>
+            },
+            {
+                path: '/profile',
+                element: <Profile></Profile>
             },
             {
                 path: '/auth',

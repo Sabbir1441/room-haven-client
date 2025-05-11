@@ -60,19 +60,19 @@ const Navbar = () => {
               </NavLink>
             </li>
             {
-            user && ( <li>
-              <NavLink
-                to="/my-bookings"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-[#eeeeec] bg-[#468596] border-b-2 border-[#f1972f] pb-1 font-semibold"
-                    : "hover:text-white hover:bg-[#0A92B9]"
-                }
-              >
-                My Bookings
-              </NavLink>
-            </li>)
-          }
+              user && (<li>
+                <NavLink
+                  to="/my-bookings"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-[#eeeeec] bg-[#468596] border-b-2 border-[#f1972f] pb-1 font-semibold"
+                      : "hover:text-white hover:bg-[#0A92B9]"
+                  }
+                >
+                  My Bookings
+                </NavLink>
+              </li>)
+            }
 
           </ul>
         </div>
@@ -112,7 +112,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           {
-            user && ( <li>
+            user && (<li>
               <NavLink
                 to="/my-bookings"
                 className={({ isActive }) =>
@@ -136,7 +136,13 @@ const Navbar = () => {
 
           {
             user && user?.email ? (
-              <img className="w-[35px] h-[35px] rounded-full" src={user?.photoURL} alt="" />
+              <Link to="/profile">
+                <img
+                  className="w-[35px] h-[35px] rounded-full cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+                  src={user?.photoURL || userlogo}
+                  alt="Profile"
+                />
+              </Link>
             ) : (<img className="w-[50px]" src={userlogo} alt="" />)
           }
 
