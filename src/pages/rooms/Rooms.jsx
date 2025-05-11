@@ -28,7 +28,7 @@ const Rooms = () => {
     }, [minPrice, maxPrice]); 
     return (
         <div className="container mx-auto px-4">
-            *<Helmet>
+            <Helmet>
                 <title>Rooms</title>
             </Helmet>
             <h2 className="text-2xl font-bold text-center my-6">Available Rooms</h2>
@@ -56,7 +56,7 @@ const Rooms = () => {
                 </div>
                 <button
                     onClick={fetchRooms}
-                    className="px-4 py-2 bg-blue-600 text-white rounded"
+                    className="px-4 py-2 bg-[#0A92B9] text-white rounded"
                 >
                     Apply Filter
                 </button>

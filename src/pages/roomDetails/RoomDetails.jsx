@@ -22,7 +22,7 @@ const RoomDetails = () => {
             .then((data) => setRoom(data))
             .catch((error) => console.error('Error loading room details:', error));
 
-        setUserEmail(user?.email); 
+        setUserEmail(user?.email);
     }, [id]);
 
     const handleBooking = () => {
@@ -33,7 +33,7 @@ const RoomDetails = () => {
                 roomName: room.name,
                 price: room.price,
                 bookingDate: selectedDate,
-                email: user?.email, 
+                email: user?.email,
             };
 
             fetch('https://room-haven-server.vercel.app/book-room', {
@@ -47,7 +47,7 @@ const RoomDetails = () => {
                 .then((data) => {
                     toast.success('Room booked successfully!');
                     setRoom((prevRoom) => ({ ...prevRoom, availability: false }));
-                    setShowModal(false); 
+                    setShowModal(false);
                 })
                 .catch((error) => {
                     console.error('Error booking room:', error);
@@ -117,7 +117,7 @@ const RoomDetails = () => {
 
                     {/* Book Now Button */}
                     <button
-                        className="bg-blue-600 text-white px-6 py-3 rounded-full mt-6 hover:bg-blue-700"
+                        className="bg-[#0A92B9] text-white px-6 py-3 rounded-full mt-6 hover:bg-[#3866c9]"
                         onClick={() => setShowModal(true)}
                     >
                         Book Now
@@ -164,13 +164,14 @@ const RoomDetails = () => {
                                 Cancel
                             </button>
                             <button
-                                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200"
+                                className="bg-[#0A92B9] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#3866c9] transition-all duration-200"
                                 onClick={handleBooking}
                             >
                                 Confirm Booking
                             </button>
                         </div>
                         <ToastContainer
+                            style={{ zIndex: 10000 }}
                             position="top-right"
                             autoClose={5000}
                             hideProgressBar={false}

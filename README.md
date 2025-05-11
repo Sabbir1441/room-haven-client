@@ -66,7 +66,7 @@ Visit `http://localhost:5173/` to see the project in action.
 - [React Documentation](https://reactrouter.com/home)
 
 
-![Screenshot](public/Screenshot%202025-05-11%20134921.png)
+![Screenshot](./public/Screenshot%202025-05-11%20134921.png)
 
 ---
 
