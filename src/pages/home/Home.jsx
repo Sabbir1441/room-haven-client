@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import RoomCard from "./RoomCard";
 import Location from "./Location";
 import SpecialOffersModal from "./SpecialOffersModal";
+import { motion } from 'framer-motion';
+import { Hotel, Clock, DollarSign } from 'lucide-react';
 
 const Home = () => {
     const [rooms, setRooms] = useState([]);
@@ -119,15 +121,69 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Why Chose us Section */}
+
+            <section className="bg-gray-200 py-10">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-4xl font-bold text-gray-800 mb-4">Why Choose Room Haven?</h2>
+                    <p className="text-lg text-gray-600 mb-10">
+                        Discover what makes us stand out and why guests love staying with us.
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {/* Card 1 */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                            className="bg-white rounded-xl shadow-md p-8"
+                        >
+                            <Hotel className="w-12 h-12 text-green-600 mb-4 mx-auto" />
+                            <h3 className="text-xl font-semibold text-gray-800 mb-2">Luxury Rooms</h3>
+                            <p className="text-gray-600">Elegant, spacious, and designed for your comfort.</p>
+                            <button className="mt-4 text-green-600 hover:underline">Read More</button>
+                        </motion.div>
+
+                        {/* Card 2 */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="bg-white rounded-xl shadow-md p-8"
+                        >
+                            <Clock className="w-12 h-12 text-green-600 mb-4 mx-auto" />
+                            <h3 className="text-xl font-semibold text-gray-800 mb-2">24/7 Service</h3>
+                            <p className="text-gray-600">Always available to meet your needs, day or night.</p>
+                            <button className="mt-4 text-green-600 hover:underline">Read More</button>
+                        </motion.div>
+
+                        {/* Card 3 */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7 }}
+                            className="bg-white rounded-xl shadow-md p-8"
+                        >
+                            <DollarSign className="w-12 h-12 text-green-600 mb-4 mx-auto" />
+                            <h3 className="text-xl font-semibold text-gray-800 mb-2">Best Price</h3>
+                            <p className="text-gray-600">Enjoy premium facilities without breaking the bank.</p>
+                            <button className="mt-4 text-green-600 hover:underline">Read More</button>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+
+
             {/* Location Section */}
-            <div className="bg-gray-200 pt-10">
+            <div className="bg-gray-100 pt-10">
                 <h2 className="text-4xl font-bold text-center mb-6 text-gray-800">Our Location</h2>
                 <Location />
             </div>
 
 
-               {/* Newsletter Section */}
-               <section className="bg-gray-100 py-10">
+            {/* Newsletter Section */}
+            <section className="bg-gray-200 py-10">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">Subscribe to Our Newsletter</h2>
                     <p className="text-lg text-gray-600 mb-6">Get exclusive deals, latest room updates, and travel tips delivered straight to your inbox!</p>
