@@ -14,12 +14,12 @@ const Banner = () => {
           className="w-full"
           alt="Hotel Luxury 1"
         />
-        <div className="absolute flex flex-col justify-center items-start h-full px-10 space-y-4 bg-black bg-opacity-50 text-white">
+        <div className="absolute flex flex-col justify-center items-start h-full px-20 space-y-4 bg-black bg-opacity-50 text-white">
           <h2 className="text-4xl font-bold">Experience True Luxury</h2>
           <p className="text-lg">
             Relax and unwind in our luxurious rooms and enjoy premium services.
           </p>
-          <Link to="/rooms" className="btn btn-neutral">
+          <Link to="/rooms" className="px-3 py-1 bg-transparent border-2 border-[#0A92B9] text-[#0A92B9] rounded-full hover:bg-[#0A92B9] hover:text-white transition duration-200">
             Explore Rooms
           </Link>
         </div>
@@ -40,12 +40,12 @@ const Banner = () => {
           className="w-full"
           alt="Hotel Luxury 2"
         />
-        <div className="absolute flex flex-col justify-center items-start h-full px-10 space-y-4 bg-black bg-opacity-50 text-white">
+        <div className="absolute flex flex-col justify-center items-start h-full px-20 space-y-4 bg-black bg-opacity-50 text-white">
           <h2 className="text-4xl font-bold">Your Comfort, Our Priority</h2>
           <p className="text-lg">
             Discover the perfect blend of elegance and comfort in our rooms.
           </p>
-          <Link to="/rooms" className="btn btn-neutral">
+          <Link to="/rooms" className="px-3 py-1 bg-transparent border-2 border-[#0A92B9] text-[#0A92B9] rounded-full hover:bg-[#0A92B9] hover:text-white transition duration-200">
             Explore Rooms
           </Link>
         </div>
@@ -66,12 +66,12 @@ const Banner = () => {
           className="w-full"
           alt="Hotel Luxury 3"
         />
-        <div className="absolute flex flex-col justify-center items-start h-full px-10 space-y-4 bg-black bg-opacity-50 text-white">
+        <div className="absolute flex flex-col justify-center items-start h-full px-20 space-y-4 bg-black bg-opacity-50 text-white">
           <h2 className="text-4xl font-bold">Book Your Stay Today</h2>
           <p className="text-lg">
             Plan your next adventure with us and enjoy an unforgettable stay.
           </p>
-          <Link to="/rooms" className="btn btn-neutral">
+          <Link to="/rooms" className="px-3 py-1 bg-transparent border-2 border-[#0A92B9] text-[#0A92B9] rounded-full hover:bg-[#0A92B9] hover:text-white transition duration-200">
             Explore Rooms
           </Link>
         </div>

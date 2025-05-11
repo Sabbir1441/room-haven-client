@@ -29,7 +29,7 @@ const SpecialOffersModal = () => {
             <p className="mb-4">Get up to 50% off on all bookings for a limited time!</p>
             <button 
                 onClick={closeModal} 
-                className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+                className="bg-[#0A92B9] text-white py-2 px-4 rounded hover:bg-[#236a7e]"
             >
                 Close
             </button>

@@ -25,7 +25,7 @@ const ConnectUs = () => {
         <Helmet>
             <title>Connect</title>
         </Helmet>
-      <h2 className="text-4xl font-extrabold text-center text-blue-600 mb-12">
+      <h2 className="text-4xl font-extrabold text-center text-[#0A92B9] mb-12">
         Connect with Us
       </h2>
       <div className="flex flex-col md:flex-row items-center justify-between gap-16">
@@ -70,14 +70,14 @@ const ConnectUs = () => {
                 <textarea
                   id="message"
                   name="message"
-                  className="p-3 border-2 border-gray-300 rounded-lg mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="p-3 border-2 border-gray-300 rounded-lg mt-2 focus:outline-none focus:ring-2 focus:ring-[#0A92B9]"
                   rows="4"
                   placeholder="Your Message"
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition duration-200"
+                className="w-full py-3 rounded-lg shadow-lg border-2 border-[#0A92B9] text-[#0A92B9] hover:bg-[#0A92B9] hover:text-white transition duration-200"
               >
                 Send Message
               </button>
@@ -90,3 +90,5 @@ const ConnectUs = () => {
 };
 
 export default ConnectUs;
+
+
