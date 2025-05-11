@@ -92,7 +92,7 @@ const Navbar = () => {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#eeeeec] bg-[#468596] border-b-2 border-[#f1972f] pb-1 font-semibold"
+                  ? "text-[#eeeeec] bg-[#468596] border-b-2 font-semibold"
                   : "hover:text-white hover:bg-[#0A92B9]"
               }
             >
@@ -104,7 +104,7 @@ const Navbar = () => {
               to="/rooms"
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#eeeeec] bg-[#468596] border-b-2 border-[#f1972f] pb-1 font-semibold"
+                  ? "text-[#eeeeec] bg-[#468596] border-b-2 font-semibold"
                   : "hover:text-white hover:bg-[#0A92B9]"
               }
             >
@@ -117,7 +117,7 @@ const Navbar = () => {
                 to="/my-bookings"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[#eeeeec] bg-[#468596] border-b-2 border-[#f1972f] pb-1 font-semibold"
+                    ? "text-[#eeeeec] bg-[#468596] border-b-2 font-semibold"
                     : "hover:text-white hover:bg-[#0A92B9]"
                 }
               >
