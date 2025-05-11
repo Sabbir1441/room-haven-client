@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Banner from "../../components/Banner"; 
+import Banner from "../../components/Banner";
 import room1 from '../../assets/room1.jpg';
 import room2 from '../../assets/room2.jpg';
 import room3 from '../../assets/room3.jpg';
@@ -12,7 +12,7 @@ const Home = () => {
     const [rooms, setRooms] = useState([]);
 
     useEffect(() => {
-        fetch("https://room-haven-server.vercel.app/rooms/latest") 
+        fetch("https://room-haven-server.vercel.app/rooms/latest")
             .then((res) => res.json())
             .then((data) => {
                 setRooms(data);
@@ -22,9 +22,9 @@ const Home = () => {
 
     return (
         <div className="bg-gray-100">
-             {/* Modal for special offers */}
-             <SpecialOffersModal />
-            <Banner /> 
+            {/* Modal for special offers */}
+            <SpecialOffersModal />
+            <Banner />
 
             {/* Latest Rooms Section */}
             <div className="container  mx-auto px-4  py-10">
@@ -36,7 +36,7 @@ const Home = () => {
                 </div>
             </div>
 
-            
+
 
             {/* Special Offers Section */}
             <section className="bg-gray-200 py-10">
@@ -120,11 +120,34 @@ const Home = () => {
             </section>
 
             {/* Location Section */}
-            <div className="bg-gray-200 py-10">
-                <h2 className="text-3xl font-bold text-center my-6 text-gray-800">Our Location</h2>
-                <Location /> 
+            <div className="bg-gray-200 pt-10">
+                <h2 className="text-4xl font-bold text-center mb-6 text-gray-800">Our Location</h2>
+                <Location />
             </div>
-            
+
+
+               {/* Newsletter Section */}
+               <section className="bg-gray-100 py-10">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">Subscribe to Our Newsletter</h2>
+                    <p className="text-lg text-gray-600 mb-6">Get exclusive deals, latest room updates, and travel tips delivered straight to your inbox!</p>
+
+                    <form className="max-w-xl mx-auto flex flex-col sm:flex-row items-center gap-4">
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            className="w-full sm:flex-1 px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400"
+                        />
+                        <button
+                            type="submit"
+                            className="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition"
+                        >
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </section>
+
         </div>
     );
 };
